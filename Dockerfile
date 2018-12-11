@@ -94,7 +94,7 @@ RUN chmod 755 /usr/local/bin/install-plugins.sh
 # from https://github.com/foxylion/docker-jenkins/blob/master/docker-images/master/Dockerfile
 #============
 
-RUN /usr/local/bin/install-plugins.sh git matrix-auth workflow-aggregator docker-workflow blueocean credentials-binding dashboard-view nested-view modernstatus docker-plugin
+RUN /usr/local/bin/install-plugins.sh git matrix-auth workflow-aggregator docker-workflow blueocean credentials-binding dashboard-view nested-view modernstatus docker-plugin ws-cleanup
 
 ENV JENKINS_USER SAP
 ENV JENKINS_PASS SAP
