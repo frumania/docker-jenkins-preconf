@@ -34,6 +34,7 @@ Based on
 * nested-view
 * modernstatus
 * docker-plugin
+* ws-cleanup
 
 # Installation
 
