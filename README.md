@@ -22,7 +22,7 @@ Based on
   * URL: unix:///var/run/docker.sock
   * Label: myslave
 
-# Plugins:
+### Plugins:
 
 * git
 * matrix-auth
@@ -35,11 +35,21 @@ Based on
 * modernstatus
 * docker-plugin
 
-# BUILD
+# Installation
 
+### Download from Dockerhub
+
+> docker pull docker-jenkins-preconf:latest 
+
+### Build locally
+
+Only required if you wanna perform your own changes to the image!  
+Via terminal, execute
+> git clone https://github.com/frumania/docker-jenkins-preconf.git  
+> cd docker-jenkins-preconf  
 > docker build -t docker-jenkins-preconf:latest .
 
-# RUN
+# Run initially
 
 > docker run -d -v /var/run/docker.sock:/var/run/docker.sock -v jenkins_home:/var/jenkins_home -p 8080:8080 -p 50000:50000 docker-jenkins-preconf:latest
 
@@ -51,7 +61,7 @@ Based on
 > docker stop <\ContainerID\>  
 > docker start <\ContainerID\>  
 
-# CLEANUP
+# Cleanup
 
 > docker stop <\ContainerID\>  
 > docker container rm <\ContainerID\>  
