@@ -44,7 +44,8 @@ Based on
 ### Build locally
 
 Only required if you wanna perform your own changes to the image!  
-Via terminal, execute
+
+Via terminal/cmd, execute
 > git clone https://github.com/frumania/docker-jenkins-preconf.git  
 
 > cd docker-jenkins-preconf  
