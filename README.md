@@ -46,8 +46,11 @@ Based on
 Only required if you wanna perform your own changes to the image!  
 Via terminal, execute
 > git clone https://github.com/frumania/docker-jenkins-preconf.git  
+
 > cd docker-jenkins-preconf  
+
 > docker build -t docker-jenkins-preconf:latest .
+
 
 # Run initially
 
@@ -58,20 +61,29 @@ Via terminal, execute
 # Start/Stop
 
 > docker ps (check container status)  
+
 > docker stop <\ContainerID\>  
+
 > docker start <\ContainerID\>  
+
 
 # Cleanup
 
 > docker stop <\ContainerID\>  
+
 > docker container rm <\ContainerID\>  
+
 > docker volume ls  
+
 > docker volume rm jenkins_home  
+
 > docker image rm <\ImageID\>  
+
 
 # Troubleshooting
 
 > docker logs <\ContainerID\>  
+
 > docker exec -it <\ContainerID\> bash  
 
 # Additonal Information
