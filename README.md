@@ -48,21 +48,21 @@ Based on
 # Start/Stop
 
 > docker ps (check container status)  
-> docker stop <containerID>  
-> docker start <containerID>  
+> docker stop <\ContainerID\>  
+> docker start <\ContainerID\>  
 
 # CLEANUP
 
-> docker stop <containerID>  
-> docker container rm <ID>  
-> docker volume ls <ID>  
+> docker stop <\ContainerID\>  
+> docker container rm <\ContainerID\>  
+> docker volume ls  
 > docker volume rm jenkins_home  
-> docker image rm <ID>  
+> docker image rm <\ImageID\>  
 
 # Troubleshooting
 
-> docker logs <containerID>  
-> docker exec -it <containerID> bash  
+> docker logs <\ContainerID\>  
+> docker exec -it <\ContainerID\> bash  
 
 # Additonal Information
 
