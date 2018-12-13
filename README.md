@@ -1,5 +1,7 @@
 # Preconfigured Jenkins Image for Docker
 
+[![Build Status](https://travis-ci.org/frumania/docker-jenkins-preconf.svg?branch=master)](https://travis-ci.org/frumania/docker-jenkins-preconf)
+
 See also on [Dockerhub](https://hub.docker.com/r/frumania/docker-jenkins-preconf/)
 
 Based on
