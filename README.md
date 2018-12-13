@@ -8,9 +8,9 @@
 
 See also on [Dockerhub](https://hub.docker.com/r/frumania/docker-jenkins-preconf/)
 
-## Preconfigured/modified Components
+## Preconfigured/modified components
 
-* Uses "root" user instead of Jenkins (Dockerfile)
+* Uses "root" user instead of "jenkins" (Dockerfile)
 * Configures a default user for Jenkins (Dockerfile & default-user.groovy)
   * User: SAP
   * PW: SAP
@@ -24,7 +24,7 @@ See also on [Dockerhub](https://hub.docker.com/r/frumania/docker-jenkins-preconf
   * URL: unix:///var/run/docker.sock
   * Label: myslave
 
-## Installed Jenkins Plugins:
+### Installed Jenkins Plugins:
 
 * git
 * matrix-auth
@@ -40,7 +40,7 @@ See also on [Dockerhub](https://hub.docker.com/r/frumania/docker-jenkins-preconf
 
 ## Usage
 
-Install/Download Docker from [docker.com](https://www.docker.com/get-started)
+Install/Download Docker from [docker.com](https://www.docker.com/get-started).
 
 ### Run
 
@@ -51,7 +51,7 @@ This will map the docker host service for later usage by Jenkins and automatical
 
 ### (Optional) Build locally
 
-Only required, if you would like to make changes to the image!  
+Only required, if you would like to **make changes** to the image!  
 
 Via terminal/cmd, execute
 > git clone https://github.com/frumania/docker-jenkins-preconf.git  
@@ -72,38 +72,38 @@ Check container status
 > docker ps
 
 Stop container
-> docker stop <\ContainerID\>  
+> docker stop <ContainerID\>  
 
 Start container
-> docker start <\ContainerID\>  
+> docker start <ContainerID\>  
 
 ### Cleanup
 
 Stop container
-> docker stop <\ContainerID\>  
+> docker stop <ContainerID\>  
 
 Remove container
-> docker container rm <\ContainerID\>  
+> docker container rm <ContainerID\>  
 
 List volumes
 > docker volume ls  
 
-Remove jenkins_home volume
+Remove "jenkins_home" volume (all configuration & workspace data will be lost!)
 > docker volume rm jenkins_home  
 
 List images
 > docker images  
 
 Removes docker image
-> docker image rm <\ImageID\>  
+> docker image rm <ImageID\>  
 
 ### Troubleshooting
 
 Display Logs
-> docker logs <\ContainerID\>  
+> docker logs <ContainerID\>  
 
 Enter container
-> docker exec -it <\ContainerID\> bash  
+> docker exec -it <ContainerID\> bash  
 
 ## Additonal Information
 
