@@ -1,0 +1,19 @@
+language: node_js
+node_js:
+  - "8"
+
+services:
+  - docker
+
+install:
+  - docker build -t docker-jenkins-preconf:latest
+  - docker run -d -v /var/run/docker.sock:/var/run/docker.sock -v jenkins_home:/var/jenkins_home -p 8080:8080 -p 50000:50000 docker-jenkins-preconf:latest
+ 
+#before_script:
+#  - pip install -r requirements.txt
+#  - pip install mock
+#  - pip install requests
+#  - pip install feedparser
+
+script:
+  - docker ps
