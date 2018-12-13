@@ -2,7 +2,7 @@
 
 [![Build Status](https://travis-ci.org/frumania/docker-jenkins-preconf.svg?branch=master)](https://travis-ci.org/frumania/docker-jenkins-preconf)
 
-[Modified](https://github.com/jenkinsci/docker) Jenkins Image for Docker, that is ready to use and does not require any manual configuration:
+[Modified](https://github.com/jenkinsci/docker) Jenkins Image for Docker, that is ready to use and does not require any manual configuration, especially suited for SAP Fiori CI processes:
 * openjdk:8-jdk  
 * Jenkins 2.155
 
@@ -14,11 +14,11 @@ See also on [Dockerhub](https://hub.docker.com/r/frumania/docker-jenkins-preconf
 * Configures a default user for Jenkins (Dockerfile & default-user.groovy)
   * User: SAP
   * PW: SAP
-* Installs a given set of plugins (see below) automatically and skips install wizward (Dockerfile/jenkins.sh)
-* Allow Cross Origin HTML/CSS Reports (jenkins.sh)
-* Set Executors to 3 (executors.groovy)
-* Enable CSRF - required for API access (csrf.groovy)
-* Configure Docker Cloud with HOST docker (dockersetup.groovy)
+* Installs a given set of plugins (see below) automatically and skips install wizard (Dockerfile/jenkins.sh)
+* Allows Cross Origin HTML/CSS Content (jenkins.sh)
+* Sets Executors to 3 (executors.groovy)
+* Enables CSRF - required for API access (csrf.groovy)
+* Configures Docker Cloud with HOST docker (dockersetup.groovy)
   * Docker Image Jenkins Slave: [frumania/uiveri5-base:latest](https://hub.docker.com/r/frumania/uiveri5-base)
   * Max concurrent slaves set to **3**
   * URL: unix:///var/run/docker.sock
