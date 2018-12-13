@@ -2,19 +2,19 @@
 
 [![Build Status](https://travis-ci.org/frumania/docker-jenkins-preconf.svg?branch=master)](https://travis-ci.org/frumania/docker-jenkins-preconf)
 
-See also on [Dockerhub](https://hub.docker.com/r/frumania/docker-jenkins-preconf/)
-
-Based on
+[Modified](https://github.com/jenkinsci/docker) Jenkins Image for Docker, that is ready to use and does not require any manual configuration:
 * openjdk:8-jdk  
 * Jenkins 2.155
 
-## Modifications
+See also on [Dockerhub](https://hub.docker.com/r/frumania/docker-jenkins-preconf/)
+
+## Preconfigured/modified Components
 
 * Uses "root" user instead of Jenkins (Dockerfile)
 * Configures a default user for Jenkins (Dockerfile & default-user.groovy)
   * User: SAP
   * PW: SAP
-* Installs required plugins automatically and skips install wizward (Dockerfile/jenkins.sh)
+* Installs a given set of plugins (see below) automatically and skips install wizward (Dockerfile/jenkins.sh)
 * Allow Cross Origin HTML/CSS Reports (jenkins.sh)
 * Set Executors to 3 (executors.groovy)
 * Enable CSRF - required for API access (csrf.groovy)
@@ -24,7 +24,7 @@ Based on
   * URL: unix:///var/run/docker.sock
   * Label: myslave
 
-## Plugins:
+## Installed Jenkins Plugins:
 
 * git
 * matrix-auth
@@ -38,15 +38,20 @@ Based on
 * docker-plugin
 * ws-cleanup
 
-# Installation
+## Usage
 
-## Download from Dockerhub
+Install/Download Docker from [docker.com](https://www.docker.com/get-started)
 
-> docker pull docker-jenkins-preconf:latest 
+### Run
 
-## Build locally
+Via terminal/cmd, execute
+> docker run -d -v /var/run/docker.sock:/var/run/docker.sock -v jenkins_home:/var/jenkins_home -p 8080:8080 -p 50000:50000 docker-jenkins-preconf:latest
 
-Only required if you wanna perform your own changes to the image!  
+This will map the docker host service for later usage by Jenkins and automatically create a 'jenkins_home' docker volume on the host machine, that will survive the container stop/restart/deletion.
+
+### (Optional) Build locally
+
+Only required, if you would like to make changes to the image!  
 
 Via terminal/cmd, execute
 > git clone https://github.com/frumania/docker-jenkins-preconf.git  
@@ -55,42 +60,54 @@ Via terminal/cmd, execute
 
 > docker build -t docker-jenkins-preconf:latest .
 
+## Change Params
 
-## Run initially
+Check out the Dockerfile & .groovy files to manipulate the Jenkins auto-configuration.
 
-> docker run -d -v /var/run/docker.sock:/var/run/docker.sock -v jenkins_home:/var/jenkins_home -p 8080:8080 -p 50000:50000 docker-jenkins-preconf:latest
-
-(Mounts VOLUME jenkins_home (is kept))
+## Useful Commands
 
 ### Start/Stop
 
-> docker ps (check container status)  
+Check container status
+> docker ps
 
+Stop container
 > docker stop <\ContainerID\>  
 
+Start container
 > docker start <\ContainerID\>  
 
+### Cleanup
 
-## Cleanup
-
+Stop container
 > docker stop <\ContainerID\>  
 
+Remove container
 > docker container rm <\ContainerID\>  
 
+List volumes
 > docker volume ls  
 
+Remove jenkins_home volume
 > docker volume rm jenkins_home  
 
+List images
+> docker images  
+
+Removes docker image
 > docker image rm <\ImageID\>  
 
+### Troubleshooting
 
-## Troubleshooting
-
+Display Logs
 > docker logs <\ContainerID\>  
 
+Enter container
 > docker exec -it <\ContainerID\> bash  
 
 ## Additonal Information
+
+[Official Jenkins Docker Image](https://github.com/jenkinsci/docker)
 
 [Dockerhub GIT Integration](https://ask.ericlin.info/post/2017/09/connect-your-repository-to-docker-hub-via-automated-build/)
 
