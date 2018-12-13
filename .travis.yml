@@ -17,3 +17,6 @@ install:
 
 script:
   - docker ps
+  - cd test
+  - npm install
+  - node index.js
