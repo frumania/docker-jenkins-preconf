@@ -6,7 +6,7 @@ Based on
 * openjdk:8-jdk  
 * Jenkins 2.155
 
-### Modifications
+## Modifications
 
 * Uses "root" user instead of Jenkins (Dockerfile)
 * Configures a default user for Jenkins (Dockerfile & default-user.groovy)
@@ -22,7 +22,7 @@ Based on
   * URL: unix:///var/run/docker.sock
   * Label: myslave
 
-### Plugins:
+## Plugins:
 
 * git
 * matrix-auth
@@ -38,11 +38,11 @@ Based on
 
 # Installation
 
-### Download from Dockerhub
+## Download from Dockerhub
 
 > docker pull docker-jenkins-preconf:latest 
 
-### Build locally
+## Build locally
 
 Only required if you wanna perform your own changes to the image!  
 
@@ -54,13 +54,13 @@ Via terminal/cmd, execute
 > docker build -t docker-jenkins-preconf:latest .
 
 
-# Run initially
+## Run initially
 
 > docker run -d -v /var/run/docker.sock:/var/run/docker.sock -v jenkins_home:/var/jenkins_home -p 8080:8080 -p 50000:50000 docker-jenkins-preconf:latest
 
 (Mounts VOLUME jenkins_home (is kept))
 
-# Start/Stop
+### Start/Stop
 
 > docker ps (check container status)  
 
@@ -69,7 +69,7 @@ Via terminal/cmd, execute
 > docker start <\ContainerID\>  
 
 
-# Cleanup
+## Cleanup
 
 > docker stop <\ContainerID\>  
 
@@ -82,12 +82,16 @@ Via terminal/cmd, execute
 > docker image rm <\ImageID\>  
 
 
-# Troubleshooting
+## Troubleshooting
 
 > docker logs <\ContainerID\>  
 
 > docker exec -it <\ContainerID\> bash  
 
-# Additonal Information
+## Additonal Information
 
 [Dockerhub GIT Integration](https://ask.ericlin.info/post/2017/09/connect-your-repository-to-docker-hub-via-automated-build/)
+
+## License
+
+[![Apache 2](https://img.shields.io/badge/license-Apache%202-blue.svg)](./LICENSE.txt)
