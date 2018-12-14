@@ -45,9 +45,15 @@ Install/Download Docker from [docker.com](https://www.docker.com/get-started).
 ### Run
 
 Via terminal/cmd, execute
-> docker run -d -v /var/run/docker.sock:/var/run/docker.sock -v jenkins_home:/var/jenkins_home -p 8080:8080 -p 50000:50000 docker-jenkins-preconf:latest
+> docker run -d -v /var/run/docker.sock:/var/run/docker.sock -v jenkins_home:/var/jenkins_home -p 8080:8080 -p 50000:50000 frumania/docker-jenkins-preconf:latest
 
 This will map the docker host service for later usage by Jenkins and automatically create a 'jenkins_home' docker volume on the host machine, that will survive the container stop/restart/deletion.
+
+Access Jenkins
+> http://localhost:8080
+
+User: SAP  
+PW: SAP  
 
 ### (Optional) Build locally
 
@@ -104,6 +110,12 @@ Display Logs
 
 Enter container
 > docker exec -it <ContainerID\> bash  
+
+### Jenkins Restart
+
+> http://localhost:8080/safeRestart. – This will restart Jenkins after the current builds have completed.
+
+> http://localhost:8080/restart – This will force a restart. Builds will not wait to complete.
 
 ## Additonal Information
 
