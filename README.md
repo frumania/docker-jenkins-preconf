@@ -2,7 +2,9 @@
 
 [![Build Status](https://travis-ci.org/frumania/docker-jenkins-preconf.svg?branch=master)](https://travis-ci.org/frumania/docker-jenkins-preconf)
 
-[Modified](https://github.com/jenkinsci/docker) Jenkins Image for Docker, that is ready to use and does not require any manual configuration, especially suited for SAP Fiori CI processes:
+[Modified](https://github.com/jenkinsci/docker) Jenkins Image for Docker, that is ready to use and does not require any manual configuration, especially suited for SAP Fiori CI processes.
+
+Based on:
 * openjdk:8-jdk  
 * Jenkins 2.155
 
