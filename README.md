@@ -42,29 +42,54 @@ See also on [Dockerhub](https://hub.docker.com/r/frumania/docker-jenkins-preconf
 
 Install/Download Docker from [docker.com](https://www.docker.com/get-started).
 
-### Run
+### Initialize (first time only)
 
 Via terminal/cmd, execute
-> docker run -d -v /var/run/docker.sock:/var/run/docker.sock -v jenkins_home:/var/jenkins_home -p 8080:8080 -p 50000:50000 frumania/docker-jenkins-preconf:latest
+```bash
+$ docker run -d -v /var/run/docker.sock:/var/run/docker.sock -v jenkins_home:/var/jenkins_home -p 8080:8080 -p 50000:50000 frumania/docker-jenkins-preconf:latest
+```
 
 This will map the docker host service for later usage by Jenkins and automatically create a 'jenkins_home' docker volume on the host machine, that will survive the container stop/restart/deletion.
+
+### Run, Start, Stop
+
+Show last active containers
+```bash
+$ docker ps -a
+```
+
+Start Container
+```bash
+$ docker start <ContainerID\>
+```
 
 Access Jenkins
 > http://localhost:8080
 
 User: SAP  
-PW: SAP  
+PW: SAP 
+
+Stop Container
+```bash
+$ docker start <ContainerID\>
+```
 
 ### (Optional) Build locally
 
 Only required, if you would like to **make changes** to the image!  
 
 Via terminal/cmd, execute
-> git clone https://github.com/frumania/docker-jenkins-preconf.git  
+```bash
+$ git clone https://github.com/frumania/docker-jenkins-preconf.git  
+```
 
-> cd docker-jenkins-preconf  
+```bash
+$ cd docker-jenkins-preconf  
+```
 
-> docker build -t docker-jenkins-preconf:latest .
+```bash
+$ docker build -t docker-jenkins-preconf:latest .
+```
 
 ## Change Params
 
@@ -72,46 +97,51 @@ Check out the Dockerfile & .groovy files to manipulate the Jenkins auto-configur
 
 ## Useful Commands
 
-### Start/Stop
-
-Check container status
-> docker ps
-
-Stop container
-> docker stop <ContainerID\>  
-
-Start container
-> docker start <ContainerID\>  
-
 ### Cleanup
 
 Stop container
-> docker stop <ContainerID\>  
+```bash
+$ docker stop <ContainerID\>  
+```
 
 Remove container
-> docker container rm <ContainerID\>  
+```bash
+$ docker container rm <ContainerID\>  
+```
 
 List volumes
-> docker volume ls  
+```bash
+$ docker volume ls  
+```
 
 Remove "jenkins_home" volume (all configuration & workspace data will be lost!)
-> docker volume rm jenkins_home  
+```bash
+$ docker volume rm jenkins_home  
+```
 
 List images
-> docker images  
+```bash
+$ docker images  
+```
 
 Removes docker image
-> docker image rm <ImageID\>  
+```bash
+$ docker image rm <ImageID\>  
+```
 
 ### Troubleshooting
 
 Display Logs
-> docker logs <ContainerID\>  
+```bash
+$ docker logs <ContainerID\>  
+```
 
 Enter container
-> docker exec -it <ContainerID\> bash  
+```bash
+$ docker exec -it <ContainerID\> bash  
+```
 
-### Jenkins Restart
+### How to restart Jenkins
 
 > http://localhost:8080/safeRestart. – This will restart Jenkins after the current builds have completed.
 
