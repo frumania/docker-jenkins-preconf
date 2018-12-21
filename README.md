@@ -62,7 +62,7 @@ $ docker ps -a
 
 Start Container
 ```bash
-$ docker start <ContainerID\>
+$ docker start <ContainerID>
 ```
 
 Access Jenkins
@@ -73,7 +73,7 @@ PW: SAP
 
 Stop Container
 ```bash
-$ docker start <ContainerID\>
+$ docker start <ContainerID>
 ```
 
 ### (Optional) Build locally
@@ -103,12 +103,12 @@ Check out the Dockerfile & .groovy files to manipulate the Jenkins auto-configur
 
 Stop container
 ```bash
-$ docker stop <ContainerID\>  
+$ docker stop <ContainerID>  
 ```
 
 Remove container
 ```bash
-$ docker container rm <ContainerID\>  
+$ docker container rm <ContainerID>  
 ```
 
 List volumes
@@ -128,19 +128,19 @@ $ docker images
 
 Removes docker image
 ```bash
-$ docker image rm <ImageID\>  
+$ docker image rm <ImageID>  
 ```
 
 ### Troubleshooting
 
 Display Logs
 ```bash
-$ docker logs <ContainerID\>  
+$ docker logs <ContainerID>  
 ```
 
 Enter container
 ```bash
-$ docker exec -it <ContainerID\> bash  
+$ docker exec -it <ContainerID> bash  
 ```
 
 ### How to restart Jenkins
