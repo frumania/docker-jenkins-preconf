@@ -65,11 +65,11 @@ Start Container
 $ docker start <ContainerID>
 ```
 
-Access Jenkins
-> http://localhost:8080
+Access Jenkins via browser, open **http://localhost:8080**
 
-User: SAP  
-PW: SAP 
+> User: SAP  
+
+> PW: SAP 
 
 Stop Container
 ```bash
