@@ -117,11 +117,17 @@ Enter container
 
 > http://localhost:8080/restart – This will force a restart. Builds will not wait to complete.
 
-## Additonal Information
+## Additional Information
 
 [Official Jenkins Docker Image](https://github.com/jenkinsci/docker)
 
 [Dockerhub GIT Integration](https://ask.ericlin.info/post/2017/09/connect-your-repository-to-docker-hub-via-automated-build/)
+
+## Support & Contribution
+
+This project is provided "as-is". There is no guarantee that raised issues will be answered or addressed in future releases.
+
+If you like to contribute, fork the code and/or let me know!
 
 ## License
 
